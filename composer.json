@@ -1,0 +1,42 @@
+{
+    "name": "marshmallow/nova-fields-help",
+    "description": "A Laravel Nova help field.",
+    "keywords": [
+        "laravel",
+        "nova",
+        "marshmallow",
+        "help"
+    ],
+    "authors": [
+        {
+            "name": "Stef van Esch",
+            "email": "stef@marshmallow.dev"
+        },
+        {
+            "name": "Alessandro Benoit",
+            "email": "alessandro@comodolab.it"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+        "illuminate/support": "^5.0|^6.0|^7.0|^8.0",
+        "php": ">=7.2.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Marshmallow\\Nova\\Fields\\Help\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Marshmallow\\Nova\\Fields\\Help\\FieldServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
