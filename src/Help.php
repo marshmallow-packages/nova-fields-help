@@ -21,7 +21,7 @@ class Help extends Field
      */
     public $meta = [
         'sideLabel' => false,
-        'icon'      => 'help'
+        'icon' => 'help',
     ];
 
     /**
@@ -202,7 +202,7 @@ class Help extends Field
      */
     public function message($message): self
     {
-        if (!is_string($message) && is_callable($message)) {
+        if (! is_string($message) && is_callable($message)) {
             $message = (string)$message();
         }
 
