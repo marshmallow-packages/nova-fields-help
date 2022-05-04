@@ -202,7 +202,7 @@ class Help extends Field
      */
     public function message($message): self
     {
-        if (! is_string($message) && is_callable($message)) {
+        if (!is_string($message) && is_callable($message)) {
             $message = (string)$message();
         }
 
@@ -284,7 +284,7 @@ class Help extends Field
      *
      * @return array
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return array_merge(parent::jsonSerialize(), [
             'type' => $this->type,

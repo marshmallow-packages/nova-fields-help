@@ -1,21 +1,25 @@
 <template>
-    <form-field :field="field" context="details"
-                class="help-field-on-details"
-                :class="{'help-field-full-width':field.fullWidthOnDetail}"></form-field>
+    <form-field
+        :field="field"
+        context="details"
+        class="help-field-on-details"
+        :class="{ 'help-field-full-width': field.fullWidthOnDetail }"
+    ></form-field>
 </template>
 
 <script>
-    import FormField from './FormField'
+    import FormField from "./FormField";
 
     export default {
-        props: ['resource', 'resourceName', 'resourceId', 'field'],
+        props: ["resource", "resourceName", "resourceId", "field"],
 
-        components: {FormField}
-    }
+        components: { FormField },
+    };
 </script>
 
 <style lang="scss">
-    .help-field-on-details:not(.help-field-full-width) .comodolab-help-field-container {
+    .help-field-on-details:not(.help-field-full-width)
+        .comodolab-help-field-container {
         border-radius: 0 !important;
     }
 
