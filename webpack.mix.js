@@ -1,8 +1,10 @@
 let mix = require("laravel-mix");
+let path = require("path");
+
 require("./mix");
 
-mix.setPublicPath("./")
-    .js("resources/js/field.js", "dist/js")
-    .sass("resources/sass/field.scss", "dist/css")
+mix.setPublicPath("dist")
+    .sass("resources/js/field.scss", "css")
+    .js("resources/js/field.js", "js")
     .vue({ version: 3 })
     .nova("marshmallow/nova-fields-help");

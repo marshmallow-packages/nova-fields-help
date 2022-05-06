@@ -4,21 +4,23 @@
         "dev": "npm run development",
         "development": "mix",
         "watch": "mix watch",
-        "watch-poll": "mix watch --watch-options-poll=1000",
+        "watch-poll": "mix watch -- --watch-options-poll=1000",
         "hot": "mix watch --hot",
         "prod": "npm run production",
         "production": "mix --production"
     },
     "devDependencies": {
-        "cross-env": "^5.1",
-        "laravel-mix": "^6.0",
-        "resolve-url-loader": "^4.0.0",
-        "sass": "^1.15.2",
-        "sass-loader": "^7.1.0",
-        "vue-loader": "^16.2.0"
+        "cross-env": "^7.0.3",
+        "@vue/babel-plugin-jsx": "^1.1.1",
+        "@vue/compiler-sfc": "^3.2.33",
+        "laravel-mix": "^6.0.43",
+        "vue-loader": "^16.8.3",
+        "vue-template-compiler": "^2.6.14",
+        "@inertiajs/inertia": "^0.11.0",
+        "form-backend-validation": "^2.3.3",
+        "@inertiajs/inertia-vue3": "^0.6.0"
     },
     "dependencies": {
-        "laravel-nova": "^1.2.0",
-        "vue": "^3.0"
+        "vuex": "^4.0.2"
     }
 }
