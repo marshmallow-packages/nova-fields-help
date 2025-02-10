@@ -14,7 +14,7 @@
         "@vue/babel-plugin-jsx": "^1.2.5",
         "@vue/compiler-sfc": "^3.5.13",
         "laravel-mix": "^6.0.43",
-        "vue-loader": "^16.8.3",
+        "vue-loader": "^17.4.2",
         "vue-template-compiler": "^2.7.16",
         "@inertiajs/inertia": "^0.11.0",
         "form-backend-validation": "^2.3.3",
