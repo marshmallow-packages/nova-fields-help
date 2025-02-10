@@ -11,7 +11,7 @@
     },
     "devDependencies": {
         "cross-env": "^7.0.3",
-        "@vue/babel-plugin-jsx": "^1.1.1",
+        "@vue/babel-plugin-jsx": "^1.2.5",
         "@vue/compiler-sfc": "^3.5.13",
         "laravel-mix": "^6.0.43",
         "vue-loader": "^16.8.3",
