@@ -10,7 +10,7 @@
         "production": "mix --production"
     },
     "devDependencies": {
-        "cross-env": "^7.0.3",
+        "cross-env": "^10.0.0",
         "@vue/babel-plugin-jsx": "^1.4.0",
         "@vue/compiler-sfc": "^3.5.18",
         "laravel-mix": "^6.0.43",
