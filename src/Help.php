@@ -23,7 +23,7 @@ class Help extends Field
     /**
      * The meta data for the element.
      *
-     * @var array
+     * @var array<string, mixed>
      */
     public $meta = [
         'sideLabel'   => false,
@@ -41,7 +41,7 @@ class Help extends Field
     /**
      * Default icons in svg format.
      *
-     * @var array
+     * @var array<string, string>
      */
     protected $svgIcons = [];
 
@@ -60,7 +60,7 @@ class Help extends Field
     /**
      * The built-in help types and their corresponding CSS classes.
      *
-     * @var array
+     * @var array<string, string>
      */
     public $types = [
         'success' => 'bg-success-light text-success-dark',
@@ -209,7 +209,7 @@ class Help extends Field
      */
     public function message($message): self
     {
-        if (!is_string($message) && is_callable($message)) {
+        if (!is_string($message)) {
             $message = (string)$message();
         }
 
