@@ -8,7 +8,7 @@ use Laravel\Nova\Fields\Field;
 
 /**
  * Class Help
- * @package Comodolab\Nova\Fields\Help
+ * @package Marshmallow\Nova\Fields\Help
  * @property string $name
  */
 class Help extends Field
@@ -320,15 +320,15 @@ class Help extends Field
      */
     private function validateCollapsible(): void
     {
-        if (!Arr::get($this->meta, 'collapsible')){
-           return;
+        if (!Arr::get($this->meta, 'collapsible')) {
+            return;
         }
 
-        if (Arr::get($this->meta, 'sideLabel')){
+        if (Arr::get($this->meta, 'sideLabel')) {
             throw new Exception('Help fields cannot be both collapsible and have a side label!');
         }
 
-        if (!$this->name || !Arr::get($this->meta, 'message')){
+        if (!$this->name || !Arr::get($this->meta, 'message')) {
             throw new Exception('Collapsible help fields must define both a title and a message!');
         }
     }

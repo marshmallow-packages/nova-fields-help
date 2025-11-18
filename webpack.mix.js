@@ -1,10 +1,13 @@
 let mix = require("laravel-mix");
-let path = require("path");
+require("mix-tailwindcss");
 
-require("./mix");
+let NovaExtension = require("laravel-nova-devtool");
+
+mix.extend("nova", new NovaExtension());
 
 mix.setPublicPath("dist")
-    .sass("resources/js/field.scss", "css")
     .js("resources/js/field.js", "js")
     .vue({ version: 3 })
+    .css("resources/css/field.css", "css")
+    .tailwind()
     .nova("marshmallow/nova-fields-help");
