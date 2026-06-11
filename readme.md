@@ -1,22 +1,27 @@
+![alt text](https://marshmallow.dev/cdn/media/logo-red-237x46.png "marshmallow.")
+
 # Laravel Nova Help Field
 
-A custom Nova fields which allows to show custom help messages within form, detail and index screens.
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/marshmallow/nova-fields-help.svg?style=flat-square)](https://packagist.org/packages/marshmallow/nova-fields-help)
+[![Total Downloads](https://img.shields.io/packagist/dt/marshmallow/nova-fields-help.svg?style=flat-square)](https://packagist.org/packages/marshmallow/nova-fields-help)
+
+A custom Laravel Nova field which allows you to show custom help messages within form, detail and index screens.
 
 ![Base example](./docs/nova-help.jpg)
 
-## Changelog
+## Installation
 
-See [changelog here](changelog.md).
-
-## Install
-
-Run this command in your nova project: 
+Install the package via Composer in your Nova project:
 
 ```bash
 composer require marshmallow/nova-fields-help
 ```
 
-Then you can use the field in your resource as follow:
+The field is registered automatically through Laravel package auto-discovery, so there is nothing else to configure.
+
+## Usage
+
+Add the field to a resource's `fields()` method:
 
 ```php
 use Marshmallow\Nova\Fields\Help\Help;
@@ -48,12 +53,29 @@ Help::danger('title', 'message');
 Help::header('title', 'subtitle');
 
 // If you prefer you can call the non static type method
-Help::make('title', 'message')->type('warning'); 
+Help::make('title', 'message')->type('warning');
 ```
+
 #### Help templates:
 ![Base example](./docs/templates.png)
 #### Headings template:
 ![Base example](./docs/headings.png)
+
+### Custom types
+
+You can extend or replace the built-in types and their CSS classes:
+
+```php
+// Merge your own types with the built-in ones
+Help::make('title', 'message')
+    ->addTypes(['brand' => 'bg-brand-light text-brand-dark'])
+    ->type('brand');
+
+// Or replace the full set of types
+Help::make('title', 'message')
+    ->types(['brand' => 'bg-brand-light text-brand-dark'])
+    ->type('brand');
+```
 
 ### Both title and message are optional
 
@@ -100,7 +122,7 @@ From v0.2 the `displayAsHtml()` method applies also to the field name (unless sh
 ### Full width on details screen
 
 ```php
-// Remove annoing padding in detail screen, also the default behaviour for the heading template 
+// Remove annoing padding in detail screen, also the default behaviour for the heading template
 Help::make('Negative margin')->showFullWidthOnDetail();
 ```
 
@@ -119,7 +141,7 @@ Help::make('Look I\'m on the side')
 
 ### Collapsible help fields
 
-Help fields can be made collapsible using the fluent method `collapsible()`. 
+Help fields can be made collapsible using the fluent method `collapsible()`.
 Collapsible help fields are collapsed by default and toggle their state clicking on their title.
 Also, keep in mind that collapsible fields must define both a title and message and cannot be used with side labels.
 
@@ -136,16 +158,16 @@ Help::info('Click here to toggle', 'Lorem ipsum dolor sit amet...')
 ```php
 /**
  * By default help messages aren't shown on index,
- * when enabled they are shown as an hoverable 
+ * when enabled they are shown as an hoverable
  * icon showing a plain (no html) tooltip.
  */
 Help::make('Column title')
     ->message('Message with <a href="#">link</a>') // The link code will be stripped out on index
     ->alsoOnIndex();
-    
+
 // Field icons can be shown conditionally on index
 Help::make()->message(function () {
-    return $this->name?"{$this->name} is awesome!":null;
+    return $this->name ? "{$this->name} is awesome!" : null;
 })->onlyOnIndex();
 ```
 
@@ -153,7 +175,7 @@ Help::make()->message(function () {
 
 ## Changelog
 
-Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
+Please see [changelog.md](changelog.md) for more information on what has changed recently.
 
 ## Security
 
@@ -161,9 +183,10 @@ If you discover any security related issues, please email stef@marshmallow.dev i
 
 ## Credits
 
-- [Alessandro Benoit](alessandro@comodolab.it)
-- [All Contributors](../../contributors)
+- [Stef van Esch](https://github.com/marshmallow-packages)
+- [Alessandro Benoit](mailto:alessandro@comodolab.it)
+- [All Contributors](https://github.com/marshmallow-packages/nova-fields-help/contributors)
 
 ## License
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+The MIT License (MIT). Please see the [License File](LICENSE.md) for more information.
